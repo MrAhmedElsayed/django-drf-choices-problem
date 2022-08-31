@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from rest_framework import viewsets
-from .serializers import ProductSerializer, CountriesSerializer
+from .serializers import ProductSerializer
 from .models import Product
 from django_countries.data import COUNTRIES
 
@@ -12,7 +12,3 @@ class ProductViewSet(viewsets.ModelViewSet):
     queryset = Product.objects.all().order_by('-id')
     serializer_class = ProductSerializer
 
-
-class CountryView(viewsets.GenericViewSet):
-    queryset = COUNTRIES
-    serializer_class = CountriesSerializer

@@ -1,12 +1,11 @@
 from django.urls import path, include
 from .views import home
 from rest_framework import routers
-from quickstart.views import ProductViewSet, CountryView
+from quickstart.views import ProductViewSet
 
 
 router = routers.DefaultRouter()
 router.register(r'products', ProductViewSet)
-# router.register(r'country', CountryView)
 
 urlpatterns = [
     path("", home, name="home"),
